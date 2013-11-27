@@ -1,0 +1,93 @@
+body{
+   font-family: 'Titillium Web', sans-serif;
+   color: #333333;
+   font-size: 13px;
+   line-height: 1.62em;
+ }
+ 
+ h1,h2,h3,h4,h5,h6{
+   font-family: 'Economica', sans-serif;
+ }
+
+ .entry,
+ #comments,
+ #respond, #profile {  
+   margin:1.5%;
+   background:#fff;
+   border-bottom:#DDD 1px solid;
+   border-bottom:rgba(0, 0, 0, .13) 1px solid;
+   box-shadow:0 0 5px rgba(0, 0, 0, .25);
+ }
+
+ .entry-container , .profile-summary{
+   margin: 0;
+   padding: 1.5% 2.9% ;
+ }
+
+ .entry-title h2{
+   font-size: 1.6em;
+   color: #088A29;
+ }
+
+ 
+ .entry-meta span{
+   margin-left: 32px;
+   padding-left: 24px;
+ }
+
+
+ .entry-meta {
+   background: none repeat scroll 0 0 #FCFCFC;
+   border-top: 1px solid rgba(0, 0, 0, 0.035);
+   color: #CCCCCC;
+   font-size: 14px;
+   font-weight: 300;
+   padding: 1.5% 2.9%;
+ }
+ 
+ #profile h3 {
+   
+ }
+ .profile-image img {
+   
+   padding: 0;
+ }
+ @media (min-width:960px) { h3 {font-size: 1.6em;} } 
+ @media (max-width:960px) { h3 {font-size: 1.2em;} } 
+
+
+
+
+
+.zf-green {
+    color: #68b604;
+}
+
+.btn-success {
+  background-color: #57a900;
+  background-image: -moz-linear-gradient(top, #70d900, #57a900);
+  background-image: -ms-linear-gradient(top, #70d900, #57a900);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
+  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
+  background-image: -o-linear-gradient(top, #70d900, #57a900);
+  background-image: linear-gradient(top, #70d900, #57a900);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
+}
+
+.btn-success:hover,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled] {
+  background-color: #57a900;
+}
+
+.btn-success:active, .btn-success.active {
+  background-color: #57a900;
+}
+
+div.container a.brand {
+    background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;
+    margin-left: 0;
+    padding: 8px 20px 12px 40px;
+}

@@ -1,0 +1,81 @@
+      <script type="text/javascript">
+
+      </script>
+      <!--  <div class="page-header">
+          <h1>Sitio en construcción</h1>
+        </div>
+        <p class="lead">Estoy remodelando mi sitio, me tomara unos días mientras me adecuo a mi nuevo habitat.</p>
+        <p>Puedes revisar mi Twitter <a href="@itsudatte">@itsudatte</a> para escribirme.</p>
+      -->
+
+        <div class="row">
+          <div class="col-xs-12 .col-sm-12 col-md-12 pull">
+            <img src="png/facebook.png" class="">
+            <img src="png/github.png" class="">
+            <img src="png/twitter.png" class="">
+            <img src="png/stack overflow.png" class="">
+            <img src="png/google +.png" class="">
+            <img src="png/soundcloud.png" class="">
+            <img src="png/tumblr.png" class="">
+            <img src="png/email.png" class="">
+          </div>
+        
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 .col-sm-9 col-md-9">
+
+            <?php foreach ($this->entries as $entry) { ?>
+
+            <div class="entry">
+            <div class="entry-container">
+              <div class="entry-title">
+                  
+                  <div class="entry-header">
+                  <h2 class="entry-title"><a href="<?=$this->url('entry', array('id' => $entry['idEntry'],'slug' => $entry['slug'] )); ?>"><?=$entry['title']; ?></a></h2> 
+                </div>
+                <div class="entry-summary" ><?=$entry['text']; ?></div>
+              </div>
+            </div>
+            <div class="entry-meta">
+              <span class="entry-num-comments">
+                <a href="<?=$this->url('entry', array('id' => $entry['idEntry'],'slug' => $entry['slug'] )); ?>#disqus_thread">0 comentarios</a>
+              </span>
+              <span class="entry-date">
+                <a href=""><?=$entry['postedAt']->format('d/m/Y'); ?></a>
+              </span>
+            </div>
+          </div>
+
+          <?php } ?>
+
+          </div>
+
+          <div class="col-xs-12 .col-sm-3 col-md-3">
+            <div class="row">
+              <div class="col-xs-9 .col-sm-5 col-md-12">
+                <div id="profile" >
+                  <figure class="profile-image">
+                    <img src="/img/profile.jpg"  alt="meow" class="img-thumbnail">
+                  </figure>
+                  <div class="profile-summary">
+                    <h3>Cesar Gutierrez Tineo</h3>
+                    <p>Web Developer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-xs-12 .col-sm-5 col-md-12">
+                <a class="twitter-timeline"  href="https://twitter.com/itsudatte"  data-widget-id="387476214270537728">Tweets por @itsudatte</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+

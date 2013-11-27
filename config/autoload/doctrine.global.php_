@@ -1,0 +1,33 @@
+<?php
+return array (
+	'doctrine' => array (
+		'connection' => array (
+			'orm_default'=> array (
+				'driverClass' => 'Doctrine\DBAL\Driver\PDOPgSql\Driver',
+					'params' => array(
+						'host'     => 'ec2-54-227-239-195.compute-1.amazonaws.com',
+						'port'     => '5432',
+						'user'     => 'osychjfqxuiipv',
+						'password' => 'ysCO4rsZ4SXD8lZjN12JUq2bSC',
+						'dbname'   => 'dbnn35aemjdveo'
+				)
+			),
+		),
+		'driver' => array (
+			'Makiblog_driver' => array (
+				'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+				'cache' => 'array',
+				'paths' => array (
+					__DIR__ . '/../../module/Makiblog/src/Makiblog/Entity' 
+				)
+			), 
+
+			'orm_default' => array (
+				'drivers' => array (
+					'Makiblog\Entity' => 'Makiblog_driver',				
+				) 
+			) 
+		) 
+	),
+
+);

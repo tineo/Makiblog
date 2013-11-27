@@ -1,0 +1,56 @@
+<p class="menu-title">Menu <span class="pull-right"><i class="icon-refresh"></i></span></p>
+    <ul>
+      <li class="start active "> <a href="<?=$this->url('dashboard'); ?>"> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span> </a> </li>
+      <li class=""> <a href="<?=$this->url('dashboard',array('controller'=>'entry')); ?>"> <i class="icon-custom-portlets"> </i> <span class="title">Entradas</span> <span class="arrow "></span> </a> 
+        <ul class="sub-menu">
+          <li > <a href="<?=$this->url('dashboard',array('controller'=>'entry','action' => 'view')); ?>"> Publicados <span class=" badge badge-disable">203</span> </a> </li>
+          <li > <a href="<?=$this->url('dashboard',array('controller'=>'entry','action' => 'view')); ?>"> Borrador <span class=" badge badge-disable">1</span> </a> </li>
+          <li > <a href="<?=$this->url('dashboard',array('controller'=>'entry','action' => 'view')); ?>"> Papelera <span class=" badge badge-disable">202</span> </a>  </li>
+        </ul>
+      </li>
+      <li class=""> <a href="<?=$this->url('dashboard',array('controller'=>'comment','action' => 'view')); ?>"> <i class="icon-envelope"> </i> <span class="title">Comentarios </span> <span class="badge badge-important pull-right">5</span> </a>
+      </li>
+      
+      <li class="hidden-desktop hidden-phone visible-tablet" id="more-widgets" style="display:" > <a href="javascript:;"> <i class="icon-ellipsis-horizontal"></i></a>
+        <ul class="sub-menu">
+          <div class="side-bar-widgets">
+            <p class="menu-title">Categorias <span class="pull-right"><a href="#" class="create-folder"><i class="icon-plus"></i></a></span></p>
+            <ul class="folders" id="folders">
+              <li><a href="#">
+                <div class="status-icon green"></div>
+                Categoria 1 </a> </li>
+              <li><a href="#">
+                <div class="status-icon red"></div>
+                Categoria 2 </a> </li>
+              <li><a href="#">
+                <div class="status-icon blue"></div>
+                Categoria 3 </a> </li>
+              <li id="folder-input" class="folder-input" style="display:none">
+                <input type="text" placeholder="Name of folder" class="no-boarder folder-name" name="" id="folder-name">
+              </li>
+            </ul>
+            
+          </div>
+        </ul>
+      </li>
+    </ul>
+    <div class="side-bar-widgets">
+      <p class="menu-title">Categorias <span class="pull-right"><a href="#" class="create-folder"><i class="icon-plus"></i></a></span></p>
+      <ul class="folders" id="folders">
+        <li><a href="#">
+          <div class="status-icon green"></div>
+          Categoria 1 </a> </li>
+        <li><a href="#">
+          <div class="status-icon red"></div>
+          Categoria 2 </a> </li>
+        <li><a href="#">
+          <div class="status-icon blue"></div>
+          Categoria 3 </a> </li>
+        <li id="folder-input" class="folder-input" style="display:none">
+          <input type="text" placeholder="Name of folder" class="no-boarder folder-name" name="" id="folder-name">
+        </li>
+      </ul>
+      
+    </div>
+    <a href="#" class="scrollup">Scroll</a>
+    <div class="clearfix"></div>

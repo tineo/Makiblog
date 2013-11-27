@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="utf-8" />
+<title>Makiblog - Admin Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+
+
+ <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+    //BEGIN CSS TEMPLATE
+    ->prependStylesheet($this->basePath() . '/assets/css/custom-icon-set.css')
+    ->prependStylesheet($this->basePath() . '/assets/css/responsive.css')
+    ->prependStylesheet($this->basePath() . '/assets/css/style.css')
+    //END CSS TEMPLATE
+    
+    //BEGIN CORE CSS FRAMEWORK
+    ->prependStylesheet($this->basePath() . '/assets/css/animate.min.css')
+    ->prependStylesheet($this->basePath() . '/assets/plugins/font-awesome/css/font-awesome.css')
+    ->prependStylesheet($this->basePath() . '/assets/plugins/bootstrap/css/bootstrap-responsive.min.css')
+    ->prependStylesheet($this->basePath() . '/assets/plugins/bootstrap/css/bootstrap.min.css')
+    //END CORE CSS FRAMEWORK
+
+    ->prependStylesheet($this->basePath() . '/assets/plugins/jquery-slider/css/jquery.sidr.light.css')
+    ->prependStylesheet($this->basePath() . '/assets/plugins/pace/pace-theme-flash.css')
+  ?>
+        
+  <?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+    // BEGIN CORE TEMPLATE JS 
+    ->prependFile($this->basePath() . '/assets/js/demo.js')
+    ->prependFile($this->basePath() . '/assets/js/core.js')
+    //END CORE TEMPLATE js
+
+    //BEGIN PAGE LEVEL JS
+    ->prependFile($this->basePath() . '/assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js')
+    ->prependFile($this->basePath() . '/assets/plugins/pace/pace.min.js')
+    ->prependFile($this->basePath() . '/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js')
+    ->prependFile($this->basePath() . '/assets/plugins/jquery-slider/jquery.sidr.min.js')
+    //END PAGE LEVEL JS
+
+    //BEGIN CORE JS FRAMEWORK
+    ->prependFile($this->basePath() . '/assets/plugins/jquery-unveil/jquery.unveil.min.js')
+    ->prependFile($this->basePath() . '/assets/plugins/breakpoints.js')
+                                      
+
+    ->prependFile($this->basePath() . '/assets/plugins/bootstrap/js/bootstrap.min.js')
+    ->prependFile($this->basePath() . '/assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js')
+    ->prependFile($this->basePath() . '/assets/plugins/jquery-1.8.3.min.js')
+
+    //->prependFile($this->basePath() . '/js/modernizr.js')
+
+    //END CORE JS FRAMEWORK
+    //->prependFile($this->basePath() . '/js/moment.min.js')
+   ?>
+<!-- END CSS TEMPLATE -->
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+<body class="">
+<!-- BEGIN HEADER -->
+<div class="header navbar navbar-inverse ">
+  <!-- BEGIN TOP NAVIGATION BAR -->
+  <div class="navbar-inner">
+    <div class="header-seperation">
+      <ul class="nav pull-left notifcation-center" id="main-menu-toggle-wrapper" style="display:none">
+        <li class="dropdown"> <a id="main-menu-toggle" href="#main-menu"  class="" >
+          <div class="iconset top-menu-toggle-white"></div>
+          </a> </li>
+      </ul>
+      <!-- BEGIN LOGO -->
+      <a href="<?=$this->url('dashboard'); ?>">
+
+      	<!-- <img src="assets/img/logo.png" class="logo"  data-src="assets/img/logo.png" data-src-retina="assets/img/logo2x.png" width="106" height="92"/>-->
+      </a>
+      <!-- END LOGO -->
+      <ul class="nav pull-right notifcation-center">
+        <li class="dropdown" id="header_task_bar"> <a href="<?=$this->url('dashboard'); ?>" class="dropdown-toggle active" data-toggle="">
+          <div class="iconset top-home"></div>
+          </a> </li>
+        <li class="dropdown" id="header_inbox_bar" > <a href="<?=$this->url('dashboard',array('action'=>'comments')); ?>" class="dropdown-toggle" >
+          <div class="iconset top-messages"></div>
+          <span class="badge" id="msgs-badge">2</span> </a></li>
+        <!--<li class="dropdown" id="portrait-chat-toggler" style="display:none"> <a href="#sidr" class="chat-menu-toggle">
+          <div class="iconset top-chat-white "></div>
+          </a> </li>-->
+      </ul>
+    </div>
+    <!-- END RESPONSIVE MENU TOGGLER -->
+    <div class="header-quick-nav" >
+      <!-- BEGIN TOP NAVIGATION MENU -->
+      <div class="pull-left">
+        <ul class="nav quick-section">
+          <li class="quicklinks"> <a href="javascript:void(0)" class="" id="layout-condensed-toggle" >
+            <div class="iconset top-menu-toggle-dark"></div>
+            </a> </li>
+        </ul>
+        <ul class="nav quick-section">
+          <li class="quicklinks"> <a href="" class="" >
+            <div class="iconset top-reload"></div>
+            </a> </li>
+          <li class="quicklinks"> <span class="h-seperate"></span></li>
+          <li class="quicklinks"> <a href="javascript:void(0)" class="" >
+            <div class="iconset top-tiles"></div>
+            </a> </li>
+          <div class="input-prepend inside search-form no-boarder"> <span class="add-on"> <a href="javascript:void(0)" class="" >
+            <div class="iconset top-search"></div>
+            </a></span>
+            <input name="" type="text"  class="no-boarder " placeholder="Buscar" style="width:250px;">
+          </div>
+        </ul>
+      </div>
+      <!-- END TOP NAVIGATION MENU -->
+      
+      <!-- BEGIN CHAT TOGGLER -->
+      <div class="pull-right"> 
+		<div class="chat-toggler">	
+				<a href="javascript:void(0)" class="dropdown-toggle" id="my-task-list" data-placement="bottom" 
+						   data-content='
+						<div style="width:300px" class="scroller" data-height="100px">
+						  <div class="notification-messages info">
+									<div class="user-profile">
+										<img src="assets/img/profiles/d.jpg" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35">
+									</div>
+									<div class="message-wrapper">
+										<div class="heading">
+											David Nester - Commented on your wall
+										</div>
+										<div class="description">
+											Meeting postponed to tomorrow
+										</div>
+										<div class="date pull-left">
+										A min ago
+										</div>										
+									</div>
+									<div class="clearfix"></div>									
+								</div>	
+							<div class="notification-messages danger">
+								<div class="iconholder">
+									<i class="icon-warning-sign"></i>
+								</div>
+								<div class="message-wrapper">
+									<div class="heading">
+										Server load limited
+									</div>
+									<div class="description">
+										Database server has reached its daily capicity
+									</div>
+									<div class="date pull-left">
+									2 mins ago
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>	
+							<div class="notification-messages success">
+								<div class="user-profile">
+									<img src="assets/img/profiles/h.jpg" data-src="assets/img/profiles/h.jpg" data-src-retina="assets/img/profiles/h2x.jpg" width="35" height="35">
+								</div>
+								<div class="message-wrapper">
+									<div class="heading">
+										You haveve got 150 messages
+									</div>
+									<div class="description">
+										150 newly unread messages in your inbox
+									</div>
+									<div class="date pull-left">
+									An hour ago
+									</div>									
+								</div>
+								<div class="clearfix"></div>
+							</div>							
+						</div>' data-toggle="dropdown" data-original-title="Notifications">
+					<div class="user-details"> 
+						<div class="username">
+							<span class="badge badge-important">3</span> 
+							 <?php echo $this->zfcUserIdentity()->getFirstname(); ?> <span class="bold"> <?php echo $this->zfcUserIdentity()->getLastname(); ?></span>									
+						</div>						
+					</div> 
+					<div class="iconset top-down-arrow"></div>
+				</a>						
+				<div class="profile-pic"> 
+					<?php echo $this->gravatar($this->zfcUserIdentity()->getEmail(),array("img_size"=>"35")) ?>
+					<!-- <img alt="" src="assets/img/profiles/avatar_small.jpg" data-src="assets/img/profiles/avatar_small.jpg" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="35" height="35" /> -->
+				</div>       			
+			</div>
+		 <ul class="nav quick-section ">
+			<li class="quicklinks"> 
+				<a data-toggle="dropdown" class="dropdown-toggle  pull-right" href="javascript:void(0)">						
+					<div class="iconset top-settings-dark "></div> 	
+				</a>
+				<ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="dropdownMenu">
+                  <li><a href="<?php echo $this->url('zfcuser') ?>"> Mi cuenta</a>
+                  </li>
+                  <li><a href="<?=$this->url('dashboard',array('action'=>'comments')); ?>"> Bandeja de comentarios&nbsp;&nbsp;<span class="badge badge-important animated bounceIn">2</span></a>
+                  </li>
+                  <li class="divider"></li>                
+                  <li><a href="<?php echo $this->url('zfcuser/logout') ?>"><i class="icon-off"></i>&nbsp;&nbsp;Log Out</a></li>
+               </ul>
+			</li> 
+			<!--<li class="quicklinks"> <span class="h-seperate"></span></li> 
+			<li class="quicklinks"> 	
+			<a id="chat-menu-toggle" href="#sidr" class="chat-menu-toggle" ><div class="iconset top-chat-dark "><span class="badge badge-important hide" id="chat-message-count">1</span></div>
+			</a> 
+				<div class="simple-chat-popup chat-menu-toggle hide" >
+					<div class="simple-chat-popup-arrow"></div><div class="simple-chat-popup-inner">
+						 <div style="width:100px">
+						 <div class="semi-bold">David Nester</div>
+						 <div class="message">Hey you there </div>
+						</div>
+					</div>
+				</div>
+			</li> -->
+		</ul>
+      </div>
+      <!-- END CHAT TOGGLER -->
+
+    </div>
+    <!-- END TOP NAVIGATION MENU -->
+  </div>
+  <!-- END TOP NAVIGATION BAR -->
+</div>
+<!-- END HEADER -->
+<!-- BEGIN CONTAINER -->
+<div class="page-container row-fluid">
+  <!-- BEGIN SIDEBAR  mini" id="main-menu" data-inner-menu="1" -->
+  <div class="page-sidebar <?=($this->mini)?'mini':''; ?>" id="main-menu" <?=($this->mini)?'data-inner-menu="1"':''; ?> >
+    <!-- BEGIN MINI-PROFILE -->
+    <div class="user-info-wrapper">
+      <div class="profile-wrapper"> 
+
+      	<?php echo $this->gravatar($this->zfcUserIdentity()->getEmail(),array("img_size"=>"65")) ?>
+      	<!--<img src="assets/img/profiles/avatar.jpg" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" width="69" height="69" /> -->
+      </div>
+      <div class="user-info">
+        <div class="greeting">Bienvenido</div>
+        <div class="username"> <?php echo $this->zfcUserIdentity()->getFirstname(); ?> <span class="semi-bold"> <?php echo $this->zfcUserIdentity()->getLastname(); ?></span></div>
+        <div class="status">Status<a href="javascript:void(0)">
+          <div class="status-icon green"></div>
+          Online</a></div>
+      </div>
+    </div>
+    <!-- END MINI-PROFILE -->
+    <!-- BEGIN MINI-WIGETS -->
+    <!-- END MINI-WIGETS -->
+    <!-- BEGIN SIDEBAR MENU -->
+    <?php echo $this->partial('dashboard/sidebarmenu'); ?>
+    <!-- END SIDEBAR MENU -->
+  </div>
+
+  <?php echo $this->partial('dashboard/entriesmenu'); ?>
+
+
+  <div class="footer-widget">
+    <div class="progress transparent progress-success progress-small no-radius no-margin">
+      <div data-percentage="79%" class="bar animate-progress-bar" ></div>
+    </div>
+    <div class="pull-right">
+      <div class="details-status"> <span data-animation-duration="560" data-value="86" class="animate-number"></span>% </div>
+      <a href="<?php echo $this->url('zfcuser/logout') ?>"><i class="icon-off"></i></a></div>
+  </div>
+  <!-- END SIDEBAR -->
+  <!-- BEGIN PAGE CONTAINER-->
+  <div class="page-content"> 
+    <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+    <div id="portlet-config" class="modal hide">
+      <div class="modal-header">
+        <button data-dismiss="modal" class="close" type="button"></button>
+        <h3>Widget Settings</h3>
+      </div>
+      <div class="modal-body"> Widget settings form goes here </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="content">  
+		<?php echo $this->content; ?>
+    </div>
+  </div>
+ </div>
+<!-- END CONTAINER --> 
+
+<!-- CHAT HERE -->
+
+<!-- END CONTAINER -->
+
+<?php echo $this->inlineScript() ?>
+</body>
+</html>

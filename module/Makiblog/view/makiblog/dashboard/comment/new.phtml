@@ -1,0 +1,46 @@
+<?php $this->headLink()->prependStylesheet($this->basePath() . '/assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css'); ?>
+
+<?php $this->headScript()->prependFile($this->basePath() .'/assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js')
+						 ->prependFile($this->basePath() . '/assets/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js')
+						 ;
+?>
+
+
+<div class="row-fluid">
+			<div class="span12">
+				<div class="row-fluid">
+					<div class="span12">
+						 <div class="grid simple" >
+							<div class="grid-body no-border" style="min-height: 850px;" >
+							<br>
+							 <div class="row-fluid" >
+								<h2>Nueva Entrada </h2>
+								<div class="control-group">
+										<label class="control-label">Titulo</label>
+										<!-- <span class="help">e.g. "someone@example.com"</span> -->
+										<div class="controls">
+											<input type="text" class="span12 ">
+										</div>
+								</div>
+								<div class="control-group">
+										<label class="control-label">Tags</label>
+										<span class="help">e.g. "Gatos, Comida, Ropa"</span>
+										<div class="controls">
+											<input type="text" class="span12 ">
+										</div>
+								</div>
+								<textarea id="text-editor" placeholder="Enter text ..." class="span12" rows="25"></textarea>									
+								</div>							
+							 </div>							
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+
+<script>
+	$(document).ready(function() {
+		$('#text-editor').wysihtml5();	
+		$("#quick-access").css("bottom","0px");				
+	});		
+</script>
