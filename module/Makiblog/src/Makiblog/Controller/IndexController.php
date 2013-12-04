@@ -14,6 +14,7 @@ class IndexController extends AbstractActionController
 
 
         $viewModel = new ViewModel();
+        $viewModel->setTemplate('fashionista/index.phtml');
         /*if($this->params()->fromRoute('page')!=""){
             $template = 'makiblog/index/'.$this->params()->fromRoute('page');    
             $resolver = $this->getEvent()->getApplication()->getServiceManager()->get('Zend\View\Resolver\TemplatePathStack');
@@ -36,7 +37,7 @@ class IndexController extends AbstractActionController
         $viewModel = new ViewModel();
         //$config = $this->getServiceLocator()->get('Config');
         //$viewModel->setVariables(array('config' => $config));
-        //$this->setTemplate('/home/tineo/tineo.mobi/data/templates/fashionista/index.phtml');
+        $viewModel->setTemplate('fashionista/index.phtml');
         return $viewModel;
     }
 }

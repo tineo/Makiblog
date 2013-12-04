@@ -91,7 +91,7 @@ return array(
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => array(
-            'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
+            //'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
             'layout/dashboard'        => __DIR__ . '/../view/makiblog/dashboard/layout.phtml',
             'dashboard/entriesmenu'   => __DIR__ . '/../view/makiblog/dashboard/entriesmenu.phtml',
             'dashboard/sidebarmenu'   => __DIR__ . '/../view/makiblog/dashboard/sidebarmenu.phtml',
@@ -113,6 +113,7 @@ return array(
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
+            __DIR__ . '/../../../data/templates',
         ),
     ),
     // Placeholder for console routes
